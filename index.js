@@ -5,6 +5,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const User = require('./models/user.model')
 const jwt = require('jsonwebtoken')
+const PORT = process.env.PORT_SERVER || 8000
 require('dotenv').config();
 
 // connect DB
@@ -64,6 +65,6 @@ app.post('/api/login', async (req, res) => {
    
 })
 
-app.listen(1337, () =>{
-    console.log('Server started on 1337')
+app.listen(PORT, () =>{
+    console.log(`Server started on ${PORT}`)
 })
